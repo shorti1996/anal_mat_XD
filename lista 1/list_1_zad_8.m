@@ -11,3 +11,5 @@ std_deviation = std(x);
 
 subplot(122);
 hist(x);
+
+fprintf('mean: %f, median: %f, standard deviation: %f\n', x_mean, x_median, std_deviation);
