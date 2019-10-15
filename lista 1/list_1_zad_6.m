@@ -5,3 +5,4 @@ hist(A, 30);
 
 figure('Name', 'zadanie6 Dystrybuanta');
 normplot(A);
+# cdfplot nie dziala
