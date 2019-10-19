@@ -1,0 +1,158 @@
+"C:\Program Files\Java\jdk1.8.0_77\bin\java" -Didea.launcher.port=7534 "-Didea.launcher.bin.path=C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2016.1\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_77\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\rt.jar;F:\9. Dropbox\Dropbox\Materia³y\Materia³y I semestr II Stopieñ\ZMAD\Lista10\ZMAD_Lista10\target\classes;C:\Users\Karol\.m2\repository\nz\ac\waikato\cms\weka\weka-stable\3.8.0\weka-stable-3.8.0.jar;C:\Users\Karol\.m2\repository\nz\ac\waikato\cms\weka\thirdparty\java-cup-11b\2015.03.26\java-cup-11b-2015.03.26.jar;C:\Users\Karol\.m2\repository\nz\ac\waikato\cms\weka\thirdparty\java-cup-11b-runtime\2015.03.26\java-cup-11b-runtime-2015.03.26.jar;C:\Users\Karol\.m2\repository\nz\ac\waikato\cms\weka\thirdparty\bounce\0.18\bounce-0.18.jar;C:\Users\Karol\.m2\repository\com\googlecode\matrix-toolkits-java\mtj\1.0.4\mtj-1.0.4.jar;C:\Users\Karol\.m2\repository\com\github\fommil\netlib\netlib-native_ref-osx-x86_64\1.1\netlib-native_ref-osx-x86_64-1.1-natives.jar;C:\Users\Karol\.m2\repository\com\github\fommil\netlib\native_ref-java\1.1\native_ref-java-1.1.jar;C:\Users\Karol\.m2\repository\com\github\fommil\jniloader\1.1\jniloader-1.1.jar;C:\Users\Karol\.m2\repository\com\github\fommil\netlib\netlib-native_ref-linux-x86_64\1.1\netlib-native_ref-linux-x86_64-1.1-natives.jar;C:\Users\Karol\.m2\repository\com\github\fommil\netlib\netlib-native_ref-linux-i686\1.1\netlib-native_ref-linux-i686-1.1-natives.jar;C:\Users\Karol\.m2\repository\com\github\fommil\netlib\netlib-native_ref-win-x86_64\1.1\netlib-native_ref-win-x86_64-1.1-natives.jar;C:\Users\Karol\.m2\repository\com\github\fommil\netlib\netlib-native_ref-win-i686\1.1\netlib-native_ref-win-i686-1.1-natives.jar;C:\Users\Karol\.m2\repository\com\github\fommil\netlib\netlib-native_ref-linux-armhf\1.1\netlib-native_ref-linux-armhf-1.1-natives.jar;C:\Users\Karol\.m2\repository\com\github\fommil\netlib\netlib-native_system-osx-x86_64\1.1\netlib-native_system-osx-x86_64-1.1-natives.jar;C:\Users\Karol\.m2\repository\com\github\fommil\netlib\native_system-java\1.1\native_system-java-1.1.jar;C:\Users\Karol\.m2\repository\com\github\fommil\netlib\netlib-native_system-linux-x86_64\1.1\netlib-native_system-linux-x86_64-1.1-natives.jar;C:\Users\Karol\.m2\repository\com\github\fommil\netlib\netlib-native_system-linux-i686\1.1\netlib-native_system-linux-i686-1.1-natives.jar;C:\Users\Karol\.m2\repository\com\github\fommil\netlib\netlib-native_system-linux-armhf\1.1\netlib-native_system-linux-armhf-1.1-natives.jar;C:\Users\Karol\.m2\repository\com\github\fommil\netlib\netlib-native_system-win-x86_64\1.1\netlib-native_system-win-x86_64-1.1-natives.jar;C:\Users\Karol\.m2\repository\com\github\fommil\netlib\netlib-native_system-win-i686\1.1\netlib-native_system-win-i686-1.1-natives.jar;C:\Users\Karol\.m2\repository\net\sourceforge\f2j\arpack_combined_all\0.1\arpack_combined_all-0.1.jar;C:\Users\Karol\.m2\repository\com\googlecode\netlib-java\netlib-java\1.1\netlib-java-1.1.jar;C:\Users\Karol\.m2\repository\com\github\fommil\netlib\core\1.1\core-1.1.jar;C:\Program Files (x86)\JetBrains\IntelliJ IDEA 2016.1\lib\idea_rt.jar" com.intellij.rt.execution.application.AppMain com.karol.szczepanski.zmitad.weka.ZMAD_Lista10
+ZMAD_Lista10
+status pozyczki {
+   dobry
+   zly
+}
+kwota kredytu {
+   '(-inf-100]'
+   '(100-inf)'
+}
+ktore rolowanie {
+   '(-inf-0.5]'
+   '(0.5-inf)'
+}
+rodzaj zrodla dochodu {
+   '(-inf-98.5]'
+   '(98.5-inf)'
+}
+okres w jakim pobieral dochod {
+   '(-inf-28.5]'
+   '(28.5-inf)'
+}
+okres w jakim bedzie pobieral dochod {
+   '(-inf-32.5]'
+   '(32.5-inf)'
+}
+wiek {
+   '(-inf-31.4]'
+   '(31.4-43.8]'
+   '(43.8-56.2]'
+   '(56.2-68.6]'
+   '(68.6-inf)'
+}
+plec {
+   M
+   K
+}
+
+----- Cross validation for classifier: ZeroR ----
+Training time: 32 milis
+Cross validation results:
+name:     zly, correct: 0, incorrect: 255
+name:   dobry, correct: 1326, incorrect: 0
+Confusion matrix:
+|zly|dobry|
+    0 1326
+  255    0
+
+tp: 0, fp: 255, tn: 1326, fn: 0
+Accuracy: 0,839, TPRate: 0,000, TNRate: 0,839, GMean: 0,000, Auc: 0,919
+
+----- Cross validation for classifier: J48 ----
+Training time: 80 milis
+Cross validation results:
+name:     zly, correct: 183, incorrect: 72
+name:   dobry, correct: 1326, incorrect: 0
+Confusion matrix:
+|zly|dobry|
+  183 1326
+   72    0
+
+tp: 183, fp: 72, tn: 1326, fn: 0
+Accuracy: 0,954, TPRate: 1,000, TNRate: 0,948, GMean: 0,974, Auc: 1,474
+
+----- Cross validation for classifier: JRip ----
+Training time: 122 milis
+Cross validation results:
+name:     zly, correct: 183, incorrect: 72
+name:   dobry, correct: 1326, incorrect: 0
+Confusion matrix:
+|zly|dobry|
+  183 1326
+   72    0
+
+tp: 183, fp: 72, tn: 1326, fn: 0
+Accuracy: 0,954, TPRate: 1,000, TNRate: 0,948, GMean: 0,974, Auc: 1,474
+
+----- Cross validation for classifier: SMO ----
+Training time: 893 milis
+Cross validation results:
+name:     zly, correct: 183, incorrect: 72
+name:   dobry, correct: 1326, incorrect: 0
+Confusion matrix:
+|zly|dobry|
+  183 1326
+   72    0
+
+tp: 183, fp: 72, tn: 1326, fn: 0
+Accuracy: 0,954, TPRate: 1,000, TNRate: 0,948, GMean: 0,974, Auc: 1,474
+
+----- Cross validation for classifier: MultilayerPerceptron,N:2000,L:0.5 ----
+Training time: 32972 milis
+Cross validation results:
+name:     zly, correct: 183, incorrect: 72
+name:   dobry, correct: 1323, incorrect: 3
+Confusion matrix:
+|zly|dobry|
+  183 1323
+   72    3
+
+tp: 183, fp: 72, tn: 1323, fn: 3
+Accuracy: 0,953, TPRate: 0,984, TNRate: 0,948, GMean: 0,966, Auc: 1,466
+
+----- Cross validation for classifier: MultilayerPerceptron,N:1000,L:0.3 ----
+Training time: 16481 milis
+Cross validation results:
+name:     zly, correct: 183, incorrect: 72
+name:   dobry, correct: 1322, incorrect: 4
+Confusion matrix:
+|zly|dobry|
+  183 1322
+   72    4
+
+tp: 183, fp: 72, tn: 1322, fn: 4
+Accuracy: 0,952, TPRate: 0,979, TNRate: 0,948, GMean: 0,963, Auc: 1,463
+
+----- Cross validation for classifier: MultilayerPerceptron,N:500,L:0.05 ----
+Training time: 8252 milis
+Cross validation results:
+name:     zly, correct: 183, incorrect: 72
+name:   dobry, correct: 1323, incorrect: 3
+Confusion matrix:
+|zly|dobry|
+  183 1323
+   72    3
+
+tp: 183, fp: 72, tn: 1323, fn: 3
+Accuracy: 0,953, TPRate: 0,984, TNRate: 0,948, GMean: 0,966, Auc: 1,466
+
+----- Cross validation for classifier: MultilayerPerceptron,N:500,L:0.8 ----
+Training time: 4943 milis
+Cross validation results:
+name:     zly, correct: 183, incorrect: 72
+name:   dobry, correct: 1325, incorrect: 1
+Confusion matrix:
+|zly|dobry|
+  183 1325
+   72    1
+
+tp: 183, fp: 72, tn: 1325, fn: 1
+Accuracy: 0,954, TPRate: 0,995, TNRate: 0,948, GMean: 0,971, Auc: 1,472
+
+----- Cross validation for classifier: NaiveBayes ----
+Training time: 11 milis
+Cross validation results:
+name:     zly, correct: 188, incorrect: 67
+name:   dobry, correct: 1280, incorrect: 46
+Confusion matrix:
+|zly|dobry|
+  188 1280
+   67   46
+
+tp: 188, fp: 67, tn: 1280, fn: 46
+Accuracy: 0,929, TPRate: 0,803, TNRate: 0,950, GMean: 0,874, Auc: 1,377
+
+END.
+
+Process finished with exit code 0

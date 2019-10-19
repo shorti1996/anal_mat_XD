@@ -1,0 +1,32 @@
+Lista9
+Zadanie1
+1. Supervised -> Attribute -> Discretize -> all default params
+2. Gain ratio, Ranker
+3. InfoGain, Ranker
+4. Save reduced data
+
+
+GainRatioAttributeEval:
+Ranked attributes:
+ 0.7321   1 kwota kredytu
+ 0.1308   6 ktore rolowanie
+ 0.0508   4 rodzaj zrodla dochodu
+ 0.0443   7 okres w jakim pobieral dochod
+ 0.0398   8 okres w jakim bedzie pobieral dochod
+ 0.0175   2 wiek
+ 0.0109   3 plec
+
+Selected attributes: 1,6,4,7,8,2,3 : 7
+
+
+InfoGainAttributeEval:
+Ranked attributes:
+ 0.3785   1 kwota kredytu
+ 0.1253   6 ktore rolowanie
+ 0.0382   2 wiek
+ 0.0347   7 okres w jakim pobieral dochod
+ 0.0241   8 okres w jakim bedzie pobieral dochod
+ 0.0111   4 rodzaj zrodla dochodu
+ 0.0104   3 plec
+
+Selected attributes: 1,6,2,7,8,4,3 : 7

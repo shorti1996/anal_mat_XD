@@ -1,0 +1,15 @@
+Lista8.
+Zadanie1.
+	1. RenameNominalValues -> potem to samo z invert
+	2. RemoveWithValues
+Zadanie2
+	1. Remove
+	2. Reorder 2-last,1
+Zadanie3
+	1. Discretize index 2, bins 5
+
+	
+
+	
+
+
