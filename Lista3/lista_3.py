@@ -56,10 +56,22 @@ def zad4():
     pacjenci = read_csv_file(filename)
     men_heights = [int(x["wzrost"]) for x in pacjenci if x["plec"] == "M"]
     women_heights = [int(x["wzrost"]) for x in pacjenci if x["plec"] == "K"]
-    eval_KS_test(men_heights, "men")
-    eval_KS_test(women_heights, "women")
 
-    pass
+    qqplot(men_heights)
+    qqplot(women_heights)
+
+    eval_KS_test(men_heights, "kstest men")
+    eval_KS_test(women_heights, "kstest women")
+
+    eval_KS2_test(men_heights, women_heights, "kstest2 men vs women")
+
+
+def print_hypothesis(alpha, name, pvalue):
+    print(name)
+    if pvalue > alpha:
+        print(f"Nie ma podstaw do odrzucenia hipotezy Ho\npvalue: {pvalue:f} > alpha: {alpha:f}")
+    else:
+        print(f"Hipoteza Ho odrzucona\npvalue: {pvalue:f} <= alpha: {alpha:f}")
 
 
 def eval_KS_test(data, name: str = ""):
@@ -68,11 +80,12 @@ def eval_KS_test(data, name: str = ""):
     # statistic, pvalue = scipy.stats.kstest(CDFall, norm.cdf)
     statistic, pvalue = scipy.stats.kstest(data, lambda x: norm.cdf(x, loc=np.mean(x), scale=np.std(x)))
 
-    print(name)
-    if pvalue > alpha:
-        print(f"Nie ma podstaw do odrzucenia hipotezy Ho\npvalue: {pvalue:f} > alpha: {alpha:f}")
-    else:
-        print(f"Hipoteza Ho odrzucona\npvalue: {pvalue:f} <= alpha: {alpha:f}")
+    print_hypothesis(alpha, name, pvalue)
 
+
+def eval_KS2_test(data1, data2, name: str = ""):
+    alpha = 0.05
+    statistic, pvalue = scipy.stats.ks_2samp(data1, data2)
+    print_hypothesis(alpha, name, pvalue)
 
 zad4()
