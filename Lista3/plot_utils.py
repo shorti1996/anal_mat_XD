@@ -12,7 +12,7 @@ def prepare_x_y_for_cdfplot(data):
 
 def cdfplot(data, xscale=None):
     x, y = prepare_x_y_for_cdfplot(data)
-    plt.step(x, y, marker='.', linestyle='-')
+    plt.step(x, y, marker=' ', linestyle='-')
     plt.ylabel("ECDF")
     if xscale:
         plt.xscale(xscale)

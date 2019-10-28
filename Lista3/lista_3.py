@@ -40,20 +40,6 @@ def zad3():
     plt.show()
 
 
-# function zadanie4
-#     fprintf('\nZadanie4.\n');
-#     [height,~,~,sex] = importPacjenci();%A(A(:, end) == 2, :);
-#     sex = char(sex);
-#     men = height(sex(:) == 'M');
-#     women = height(sex(:) == 'K');
-#     evaluateKStest('kstest Mezczyzni', men);
-#     evaluateKStest('kstest Kobiety', women);
-#     evaluateKS2test('kstest2', men, women);
-#     figure('Name', 'zadanie4 qqplot men');
-#     qqplot(men);
-#     figure('Name', 'zadanie4 qqplot woman');
-#     qqplot(women);
-# end
 def zad4():
     filename = "pacjenci.csv"
     pacjenci = read_csv_file(filename)
@@ -124,6 +110,15 @@ def zad8():
     qqplot(times)
 
 
+def zad9():
+    kondensatory = read_csv_file("kondensatory.csv")
+    pojemnosc = [float(x["pojemnosc"]) for x in kondensatory]
+    # eval_KS_test(pojemnosc, "KS test")
+    # eval_lilliefors(pojemnosc, "lilliefors test")
+    eval_SW_test(pojemnosc, "SW test")
+    qqplot(pojemnosc)
+
+
 def print_hypothesis(alpha, name, hypothesis, pvalue):
     print(f"{name}, H0={hypothesis}")
     if pvalue > alpha:
@@ -155,4 +150,17 @@ def eval_SW_test(data, name: str = ""):
     print_hypothesis(alpha, name, statistic, pvalue)
 
 
-zad8()
+zad9()
+
+# if __name__ == '__main__':
+#     while True:
+#         print("dawaj numera 1-10".upper())
+#         choice = input("dej mnie ")
+#         zad = f"zad{choice}"
+#         print(f"i cyk {zad}()")
+#         from Lista3 import lista_3 as l3
+#
+#         try:
+#             getattr(l3, zad)()
+#         except AttributeError:
+#             print("ojeje 😭")
