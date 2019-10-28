@@ -1,12 +1,15 @@
 import csv
 
 import scipy
+from statsmodels.stats.diagnostic import lilliefors
 from matplotlib import pyplot as plt
 from matplotlib.collections import Collection
 import numpy as np
 from Lista3.plot_utils import cdfplot, qqplot, prepare_x_y_for_cdfplot
 from Lista3.file_utils import read_csv_file
 from scipy.stats import norm
+
+alpha = 0.05
 
 
 def zad1():
@@ -93,8 +96,18 @@ def zad5():
     qqplot(reneta)
 
 
-def print_hypothesis(alpha, name, pvalue):
-    print(name)
+def zad6():
+    pacjenci = read_csv_file("pacjenci.csv")
+    men_heights = [int(x["wzrost"]) for x in pacjenci if x["plec"] == "M"]
+    women_heights = [int(x["wzrost"]) for x in pacjenci if x["plec"] == "K"]
+
+    eval_lilliefors(men_heights, "kstest men")
+    eval_lilliefors(women_heights, "kstest women")
+    # eval_lilliefors([1,2,3,4,3,2,1,2,2,2,2,2,2,2], "kstest aaa")
+
+
+def print_hypothesis(alpha, name, hypothesis, pvalue):
+    print(f"{name}, H0={hypothesis}")
     if pvalue > alpha:
         print(f"Nie ma podstaw do odrzucenia hipotezy Ho\npvalue: {pvalue:f} > alpha: {alpha:f}")
     else:
@@ -102,18 +115,21 @@ def print_hypothesis(alpha, name, pvalue):
 
 
 def eval_KS_test(data, name: str = ""):
-    alpha = 0.05
     # CDFall = norm.cdf(data, loc=np.mean(data), scale=np.std(data))
     # statistic, pvalue = scipy.stats.kstest(CDFall, norm.cdf)
     statistic, pvalue = scipy.stats.kstest(data, lambda x: norm.cdf(x, loc=np.mean(x), scale=np.std(x)))
 
-    print_hypothesis(alpha, name, pvalue)
+    print_hypothesis(alpha, name, statistic, pvalue)
 
 
 def eval_KS2_test(data1, data2, name: str = ""):
-    alpha = 0.05
     statistic, pvalue = scipy.stats.ks_2samp(data1, data2)
-    print_hypothesis(alpha, name, pvalue)
+    print_hypothesis(alpha, name, statistic, pvalue)
 
 
-zad5()
+def eval_lilliefors(data, name: str = ""):
+    ksstat, pvalue = lilliefors(data, dist="norm")
+    print_hypothesis(alpha, name, ksstat, pvalue)
+
+
+zad6()
