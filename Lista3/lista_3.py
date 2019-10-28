@@ -1,28 +1,12 @@
-import numpy as np
-import scipy.stats as stats
+import csv
+
+import scipy
 from matplotlib import pyplot as plt
-
-
-def prepare_x_y_for_cdfplot(data):
-    x = np.sort(data)
-    y = np.arange(1, len(x) + 1) / len(x)
-    return x, y
-
-
-def cdfplot(data, xscale=None):
-    x, y = prepare_x_y_for_cdfplot(data)
-    plt.step(x, y, marker='.', linestyle='-')
-    plt.ylabel("ECDF")
-    if xscale:
-        plt.xscale(xscale)
-    plt.margins(0.02)
-    # plt.hist(controlB, normed=False, cumulative=True, histtype='step')
-    plt.show()
-
-
-def qqplot(data):
-    stats.probplot(data, dist='norm', plot=plt)
-    plt.show()
+from matplotlib.collections import Collection
+import numpy as np
+from Lista3.plot_utils import cdfplot, qqplot, prepare_x_y_for_cdfplot
+from Lista3.file_utils import read_csv_file
+from scipy.stats import norm
 
 
 def zad1():
@@ -53,4 +37,42 @@ def zad3():
     plt.show()
 
 
-zad2()
+# function zadanie4
+#     fprintf('\nZadanie4.\n');
+#     [height,~,~,sex] = importPacjenci();%A(A(:, end) == 2, :);
+#     sex = char(sex);
+#     men = height(sex(:) == 'M');
+#     women = height(sex(:) == 'K');
+#     evaluateKStest('kstest Mezczyzni', men);
+#     evaluateKStest('kstest Kobiety', women);
+#     evaluateKS2test('kstest2', men, women);
+#     figure('Name', 'zadanie4 qqplot men');
+#     qqplot(men);
+#     figure('Name', 'zadanie4 qqplot woman');
+#     qqplot(women);
+# end
+def zad4():
+    filename = "pacjenci.csv"
+    pacjenci = read_csv_file(filename)
+    men_heights = [int(x["wzrost"]) for x in pacjenci if x["plec"] == "M"]
+    women_heights = [int(x["wzrost"]) for x in pacjenci if x["plec"] == "K"]
+    eval_KS_test(men_heights, "men")
+    eval_KS_test(women_heights, "women")
+
+    pass
+
+
+def eval_KS_test(data, name: str = ""):
+    alpha = 0.05
+    # CDFall = norm.cdf(data, loc=np.mean(data), scale=np.std(data))
+    # statistic, pvalue = scipy.stats.kstest(CDFall, norm.cdf)
+    statistic, pvalue = scipy.stats.kstest(data, lambda x: norm.cdf(x, loc=np.mean(x), scale=np.std(x)))
+
+    print(name)
+    if pvalue > alpha:
+        print(f"Nie ma podstaw do odrzucenia hipotezy Ho\npvalue: {pvalue:f} > alpha: {alpha:f}")
+    else:
+        print(f"Hipoteza Ho odrzucona\npvalue: {pvalue:f} <= alpha: {alpha:f}")
+
+
+zad4()
