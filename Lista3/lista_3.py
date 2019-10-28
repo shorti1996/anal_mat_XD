@@ -106,6 +106,15 @@ def zad6():
     # eval_lilliefors([1,2,3,4,3,2,1,2,2,2,2,2,2,2], "kstest aaa")
 
 
+def zad7():
+    pacjenci = read_csv_file("pacjenci.csv")
+    sugar = [float(x["cukier"]) for x in pacjenci]
+    # eval_KS_test(sugar, "KS test")
+    # eval_lilliefors(sugar, "lilliefors test")
+    eval_SW_test(sugar, "SW test")
+    qqplot(sugar)
+
+
 def print_hypothesis(alpha, name, hypothesis, pvalue):
     print(f"{name}, H0={hypothesis}")
     if pvalue > alpha:
@@ -132,4 +141,9 @@ def eval_lilliefors(data, name: str = ""):
     print_hypothesis(alpha, name, ksstat, pvalue)
 
 
-zad6()
+def eval_SW_test(data, name: str = ""):
+    statistic, pvalue = scipy.stats.shapiro(data)
+    print_hypothesis(alpha, name, statistic, pvalue)
+
+
+zad7()
