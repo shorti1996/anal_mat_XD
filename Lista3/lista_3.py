@@ -1,13 +1,11 @@
-import csv
-
-import scipy
-from statsmodels.stats.diagnostic import lilliefors
-from matplotlib import pyplot as plt
-from matplotlib.collections import Collection
 import numpy as np
-from Lista3.plot_utils import cdfplot, qqplot, prepare_x_y_for_cdfplot
-from Lista3.file_utils import read_csv_file
+import scipy
+from matplotlib import pyplot as plt
 from scipy.stats import norm
+from statsmodels.stats.diagnostic import lilliefors
+
+from Lista3.file_utils import read_csv_file
+from Lista3.plot_utils import cdfplot, qqplot, prepare_x_y_for_cdfplot
 
 alpha = 0.05
 
@@ -119,6 +117,24 @@ def zad9():
     qqplot(pojemnosc)
 
 
+def zad10():
+    absolwenci = read_csv_file("absolwenci.csv", delimiter=';')
+    rolnictwo = [int(x["SALARY"]) for x in absolwenci if x["COLLEGE"] == "Rolnictwo"]
+    pedagogika = [int(x["SALARY"]) for x in absolwenci if x["COLLEGE"] == "Pedagogika"]
+
+    qqplot(rolnictwo, title="Rolnictwo")
+    qqplot(pedagogika, title="Pedagogika")
+
+    eval_KS_test(rolnictwo, "KS test")
+    eval_lilliefors(rolnictwo, "lilliefors test")
+    eval_SW_test(rolnictwo, "SW test")
+
+    print("\n\n\n")
+    eval_KS_test(pedagogika, "KS test")
+    eval_lilliefors(pedagogika, "lilliefors test")
+    eval_SW_test(pedagogika, "SW test")
+
+
 def print_hypothesis(alpha, name, hypothesis, pvalue):
     print(f"{name}, H0={hypothesis}")
     if pvalue > alpha:
@@ -150,17 +166,18 @@ def eval_SW_test(data, name: str = ""):
     print_hypothesis(alpha, name, statistic, pvalue)
 
 
-zad9()
+# zad10()
 
-# if __name__ == '__main__':
-#     while True:
-#         print("dawaj numera 1-10".upper())
-#         choice = input("dej mnie ")
-#         zad = f"zad{choice}"
-#         print(f"i cyk {zad}()")
-#         from Lista3 import lista_3 as l3
-#
-#         try:
-#             getattr(l3, zad)()
-#         except AttributeError:
-#             print("ojeje 😭")
+if __name__ == '__main__':
+    while True:
+        print("dawaj numera 1-10".upper())
+        choice = input("dej mnie ")
+        zad = f"zad{choice}"
+        print(f"i cyk {zad}()")
+        # noinspection PyUnresolvedReferences
+        from Lista3 import lista_3 as l3
+
+        try:
+            getattr(l3, zad)()
+        except AttributeError:
+            print("ojeje 😭")

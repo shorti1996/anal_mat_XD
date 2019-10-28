@@ -21,6 +21,9 @@ def cdfplot(data, xscale=None):
     plt.show()
 
 
-def qqplot(data):
+def qqplot(data, title: str = None):
+    fig, axs = plt.subplots(1, 1)
     stats.probplot(data, dist='norm', plot=plt)
+    if title:
+        axs.set_title(title)
     plt.show()
