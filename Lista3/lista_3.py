@@ -115,6 +115,15 @@ def zad7():
     qqplot(sugar)
 
 
+def zad8():
+    zarowki = read_csv_file("zarowki.csv")
+    times = [float(x["czas"]) for x in zarowki]
+    # eval_KS_test(times, "KS test")
+    # eval_lilliefors(times, "lilliefors test")
+    eval_SW_test(times, "SW test")
+    qqplot(times)
+
+
 def print_hypothesis(alpha, name, hypothesis, pvalue):
     print(f"{name}, H0={hypothesis}")
     if pvalue > alpha:
@@ -146,4 +155,4 @@ def eval_SW_test(data, name: str = ""):
     print_hypothesis(alpha, name, statistic, pvalue)
 
 
-zad7()
+zad8()
