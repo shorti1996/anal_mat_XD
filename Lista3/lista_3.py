@@ -36,6 +36,8 @@ def zad3():
     plt.step(x1, y1)
     plt.step(x2, y2)
     plt.show()
+    # qqplot(control_a)
+    # qqplot(treatment_a)
 
 
 def zad4():
@@ -68,8 +70,13 @@ def zad5():
               1, 6.6, 23.7, 23.5, 17.3, 24.6, 27.8, 29.7, 25.3, 19.9, 18.2, 26.2, 20.4, 23.3,
               26.7, 26.0, 1, 25.1, 33.1, 35.0, 25.3, 23.6, 23.2, 20.2, 24.7, 22.6, 39.1, 26.5, 22.7]
 
-    cdfplot(delikates)
-    cdfplot(reneta)
+    # cdfplot(delikates)
+    # cdfplot(reneta)
+    x1, y1 = prepare_x_y_for_cdfplot(delikates)
+    x2, y2 = prepare_x_y_for_cdfplot(reneta)
+    plt.step(x1, y1)
+    plt.step(x2, y2)
+    plt.show()
 
     eval_KS_test(delikates, "kstest delikates")
     eval_KS_test(reneta, "kstest reneta")
@@ -87,6 +94,9 @@ def zad6():
 
     eval_lilliefors(men_heights, "kstest men")
     eval_lilliefors(women_heights, "kstest women")
+
+    qqplot(men_heights)
+    qqplot(women_heights)
     # eval_lilliefors([1,2,3,4,3,2,1,2,2,2,2,2,2,2], "kstest aaa")
 
 
@@ -125,14 +135,14 @@ def zad10():
     qqplot(rolnictwo, title="Rolnictwo")
     qqplot(pedagogika, title="Pedagogika")
 
-    eval_KS_test(rolnictwo, "KS test")
-    eval_lilliefors(rolnictwo, "lilliefors test")
-    eval_SW_test(rolnictwo, "SW test")
+    eval_KS_test(rolnictwo, "Rolnictwo KS test")
+    eval_lilliefors(rolnictwo, "Rolnictwo lilliefors test")
+    eval_SW_test(rolnictwo, "Rolnictwo SW test")
 
     print("\n\n\n")
-    eval_KS_test(pedagogika, "KS test")
-    eval_lilliefors(pedagogika, "lilliefors test")
-    eval_SW_test(pedagogika, "SW test")
+    eval_KS_test(pedagogika, "Pedagogika KS test")
+    eval_lilliefors(pedagogika, "Pedagogika lilliefors test")
+    eval_SW_test(pedagogika, "Pedagogika SW test")
 
 
 def print_hypothesis(alpha, name, hypothesis, pvalue):
@@ -170,7 +180,7 @@ def eval_SW_test(data, name: str = ""):
 
 if __name__ == '__main__':
     while True:
-        print("dawaj numera 1-10".upper())
+        print("\ndawaj numera 1-10".upper())
         choice = input("dej mnie ")
         zad = f"zad{choice}"
         print(f"i cyk {zad}()")
