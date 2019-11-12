@@ -6,7 +6,7 @@ function lista4
     #zadanie5();
     #zadanie6();
     #zadanie7();
-    zadanie8();
+    #zadanie8();
 end
 
 function zadanie1
@@ -102,8 +102,8 @@ function zadanie6
     alpha = 0.05;
     
     evaluateSWtest('swtest data17', data17, alpha);
-    % hipoteza H0 że dane pochodzą z rozkładu normalnego została odrzucona
-    % nie można przeprowadzić ttestu
+    % hipoteza H0 ze dane pochodza z rozkladu normalnego zostala odrzucona
+    % nie mozna przeprowadzic ttestu
     
     figure('Name', 'zadanie6 qqplot data17');
     qqplot(data17);
@@ -113,8 +113,8 @@ function zadanie7
     fprintf('\nzadanie7.\n');
     nerwowi = [3, 3, 4, 5, 5];
     spokojni = [4, 6, 7, 9, 9];
-    % h0 - próbki są jednakowo duże
-    % h1 - próbki nie są jednakowo duże
+    % h0 - probki sa jednakowo duze
+    % h1 - probki nie sa jednakowo duze
     alpha = 0.05;
     [p, stats] = u_test(nerwowi,spokojni);
     #disp(stats);
