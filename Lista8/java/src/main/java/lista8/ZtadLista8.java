@@ -1,3 +1,4 @@
+package lista8;
 
 import weka.core.Attribute;
 import weka.core.Instances;
